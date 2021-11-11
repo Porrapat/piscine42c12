@@ -1,11 +1,21 @@
 .DEFAULT_GOAL := all
 norminette:
-	-norminette ./ex00/ft_strlen.c
-	-norminette ./ex01/ft_putstr.c
-	-norminette ./ex02/ft_putnbr.c
-	-norminette ./ex03/ft_atoi.c
-	-norminette ./ex04/ft_putnbr_base.c
-	-norminette ./ex05/ft_atoi_base.c
+	-norminette ./ex00/ft_create_elem.c
+	-norminette ./ex01/ft_list_push_front.c
+	-norminette ./ex02/ft_list_size.c
+	-norminette ./ex03/ft_list_last.c
+	-norminette ./ex04/ft_list_push_back.c
+	-norminette ./ex05/ft_list_push_strs.c
+	-norminette ./ex06/ft_atoi_base.c
+	-norminette ./ex07/ft_atoi_base.c
+	-norminette ./ex08/ft_atoi_base.c
+	-norminette ./ex09/ft_atoi_base.c
+	-norminette ./ex10/ft_atoi_base.c
+	-norminette ./ex11/ft_atoi_base.c
+	-norminette ./ex12/ft_atoi_base.c
+	-norminette ./ex13/ft_atoi_base.c
+	-norminette ./ex14/ft_atoi_base.c
+	-norminette ./ex15/ft_atoi_base.c
 
 compile: norminette
 	-gcc ./ex00/ft_strlen.c test_ex00_ft_strlen.c -Wall -Werror -Wextra -o test_ex00_ft_strlen
