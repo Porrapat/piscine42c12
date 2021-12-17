@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecaceres <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ppetchda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 13:16:43 by ecaceres          #+#    #+#             */
-/*   Updated: 2019/08/22 14:56:32 by ecaceres         ###   ########.fr       */
+/*   Created: 2021/12/17 14:22:59 by porrapat          #+#    #+#             */
+/*   Updated: 2021/12/17 14:23:55 by porrapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
-typedef struct	s_list
+typedef struct s_list
 {
 	struct s_list	*next;
 	void			*data;
