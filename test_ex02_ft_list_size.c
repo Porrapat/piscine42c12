@@ -10,16 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
 #include <stdio.h>
-
-int	ft_list_size(t_list *begin_list)
-{
-	if (begin_list->next == 0)
-		return (0);
-	return (1 + ft_list_size(begin_list->next));
-}
+#include "ex02/ft_list.h"
 
 int	main(void)
 {

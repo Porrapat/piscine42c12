@@ -19,8 +19,14 @@ norminette:
 
 compile: norminette
 	-gcc ./ex00/ft_create_elem.c test_ex00_ft_create_elem.c -Wall -Werror -Wextra -o test_ex00_ft_create_elem
-	-gcc ./ex01/ft_list_push_front.c ./ex00/ft_create_elem.c test_ex01_ft_list_push_front.c -Wall -Werror -Wextra -o test_ex01_ft_list_push_front
-# -gcc ./ex02/ft_putnbr.c test_ex02_ft_putnbr.c -Wall -Werror -Wextra -o test_ex02_ft_putnbr
+	-gcc ./ex01/ft_list_push_front.c \
+	./ex00/ft_create_elem.c \
+	test_ex01_ft_list_push_front.c -Wall -Werror -Wextra -o test_ex01_ft_list_push_front
+	-gcc ./ex02/ft_list_size.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	test_ex02_ft_list_size.c -Wall -Werror -Wextra -o test_ex02_ft_list_size
+
 # -gcc ./ex03/ft_atoi.c test_ex03_ft_atoi.c -Wall -Werror -Wextra -o test_ex03_ft_atoi
 # -gcc ./ex04/ft_putnbr_base.c test_ex04_ft_putnbr_base.c -Wall -Werror -Wextra -o test_ex04_ft_putnbr_base
 # -gcc ./ex05/ft_atoi_base.c ./ex05/ft_strlen.c test_ex05_ft_atoi_base.c -Wall -Werror -Wextra -o test_ex05_ft_atoi_base
@@ -36,7 +42,7 @@ compile: norminette
 run:	compile
 	-./test_ex00_ft_create_elem > result_current_ex00_ft_create_elem.txt
 	-./test_ex01_ft_list_push_front > result_current_ex01_ft_list_push_front.txt
-# 	-./test_ex01_ft_putstr > result_current_ex01_ft_putstr.txt
+# 	-./test_ex02_ft_list_size > result_current_ex02_ft_list_size.txt
 # 	-./test_ex02_ft_putnbr > result_current_ex02_ft_putnbr.txt
 # 	-./test_ex03_ft_atoi > result_current_ex03_ft_atoi.txt
 # 	-./test_ex04_ft_putnbr_base > result_current_ex04_ft_putnbr_base.txt
@@ -57,6 +63,7 @@ clean:
 	-rm -rf result_current_ex*.txt
 	-rm test_ex00_ft_create_elem
 	-rm test_ex01_ft_list_push_front
+	-rm test_ex02_ft_list_size
 # 	-rm test_ex02_ft_putnbr
 # 	-rm test_ex03_ft_atoi
 # 	-rm test_ex04_ft_putnbr_base
