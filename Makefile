@@ -2,13 +2,13 @@
 norminette:
 	-norminette ./ex00/ft_create_elem.c ./ex00/ft_list.h
 	-norminette ./ex01/ft_list_push_front.c ./ex01/ft_list.h
-# -norminette ./ex02/ft_list_size.c
-# -norminette ./ex03/ft_list_last.c
-# -norminette ./ex04/ft_list_push_back.c
-# -norminette ./ex05/ft_list_push_strs.c
-# -norminette ./ex06/ft_atoi_base.c
-# -norminette ./ex07/ft_atoi_base.c
-# -norminette ./ex08/ft_atoi_base.c
+	-norminette ./ex02/ft_list_size.c ./ex02/ft_list.h
+	-norminette ./ex03/ft_list_last.c ./ex03/ft_list.h
+	-norminette ./ex04/ft_list_push_back.c ./ex04/ft_list.h
+	-norminette ./ex05/ft_list_push_strs.c ./ex05/ft_list.h
+	-norminette ./ex06/ft_list_clear.c ./ex06/ft_list.h
+	-norminette ./ex07/ft_list_at.c ./ex07/ft_list.h
+	-norminette ./ex08/ft_list_reverse.c ./ex08/ft_list.h
 # -norminette ./ex09/ft_atoi_base.c
 # -norminette ./ex10/ft_atoi_base.c
 # -norminette ./ex11/ft_atoi_base.c
@@ -26,6 +26,24 @@ compile: norminette
 	./ex00/ft_create_elem.c \
 	./ex01/ft_list_push_front.c \
 	test_ex02_ft_list_size.c -Wall -Werror -Wextra -o test_ex02_ft_list_size
+	-gcc ./ex03/ft_list_last.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	test_ex03_ft_list_last.c -Wall -Werror -Wextra -o test_ex03_ft_list_last
+	-gcc ./ex04/ft_list_push_back.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	./ex03/ft_list_last.c \
+	test_ex04_ft_list_push_back.c -Wall -Werror -Wextra -o test_ex04_ft_list_push_back
+	-gcc ./ex05/ft_list_push_strs.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	./ex03/ft_list_last.c \
+	./ex04/ft_list_push_back.c \
+	test_ex05_ft_list_push_strs.c -Wall -Werror -Wextra -o test_ex05_ft_list_push_strs
 
 # -gcc ./ex03/ft_atoi.c test_ex03_ft_atoi.c -Wall -Werror -Wextra -o test_ex03_ft_atoi
 # -gcc ./ex04/ft_putnbr_base.c test_ex04_ft_putnbr_base.c -Wall -Werror -Wextra -o test_ex04_ft_putnbr_base
@@ -64,7 +82,7 @@ clean:
 	-rm test_ex00_ft_create_elem
 	-rm test_ex01_ft_list_push_front
 	-rm test_ex02_ft_list_size
-# 	-rm test_ex02_ft_putnbr
+	-rm test_ex03_ft_list_last
 # 	-rm test_ex03_ft_atoi
 # 	-rm test_ex04_ft_putnbr_base
 # 	-rm test_ex05_ft_atoi_base
