@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 norminette:
-	-norminette ./ex00/ft_create_elem.c
-# -norminette ./ex01/ft_list_push_front.c
+	-norminette ./ex00/ft_create_elem.c ./ex00/ft_list.h
+	-norminette ./ex01/ft_list_push_front.c ./ex01/ft_list.h
 # -norminette ./ex02/ft_list_size.c
 # -norminette ./ex03/ft_list_last.c
 # -norminette ./ex04/ft_list_push_back.c
@@ -19,7 +19,7 @@ norminette:
 
 compile: norminette
 	-gcc ./ex00/ft_create_elem.c test_ex00_ft_create_elem.c -Wall -Werror -Wextra -o test_ex00_ft_create_elem
-# -gcc ./ex01/ft_putstr.c test_ex01_ft_putstr.c -Wall -Werror -Wextra -o test_ex01_ft_putstr
+	-gcc ./ex01/ft_putstr.c test_ex01_ft_putstr.c -Wall -Werror -Wextra -o test_ex01_ft_putstr
 # -gcc ./ex02/ft_putnbr.c test_ex02_ft_putnbr.c -Wall -Werror -Wextra -o test_ex02_ft_putnbr
 # -gcc ./ex03/ft_atoi.c test_ex03_ft_atoi.c -Wall -Werror -Wextra -o test_ex03_ft_atoi
 # -gcc ./ex04/ft_putnbr_base.c test_ex04_ft_putnbr_base.c -Wall -Werror -Wextra -o test_ex04_ft_putnbr_base
