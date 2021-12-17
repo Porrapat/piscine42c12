@@ -1,45 +1,45 @@
 .DEFAULT_GOAL := all
 norminette:
 	-norminette ./ex00/ft_create_elem.c
-	-norminette ./ex01/ft_list_push_front.c
-	-norminette ./ex02/ft_list_size.c
-	-norminette ./ex03/ft_list_last.c
-	-norminette ./ex04/ft_list_push_back.c
-	-norminette ./ex05/ft_list_push_strs.c
-	-norminette ./ex06/ft_atoi_base.c
-	-norminette ./ex07/ft_atoi_base.c
-	-norminette ./ex08/ft_atoi_base.c
-	-norminette ./ex09/ft_atoi_base.c
-	-norminette ./ex10/ft_atoi_base.c
-	-norminette ./ex11/ft_atoi_base.c
-	-norminette ./ex12/ft_atoi_base.c
-	-norminette ./ex13/ft_atoi_base.c
-	-norminette ./ex14/ft_atoi_base.c
-	-norminette ./ex15/ft_atoi_base.c
+# -norminette ./ex01/ft_list_push_front.c
+# -norminette ./ex02/ft_list_size.c
+# -norminette ./ex03/ft_list_last.c
+# -norminette ./ex04/ft_list_push_back.c
+# -norminette ./ex05/ft_list_push_strs.c
+# -norminette ./ex06/ft_atoi_base.c
+# -norminette ./ex07/ft_atoi_base.c
+# -norminette ./ex08/ft_atoi_base.c
+# -norminette ./ex09/ft_atoi_base.c
+# -norminette ./ex10/ft_atoi_base.c
+# -norminette ./ex11/ft_atoi_base.c
+# -norminette ./ex12/ft_atoi_base.c
+# -norminette ./ex13/ft_atoi_base.c
+# -norminette ./ex14/ft_atoi_base.c
+# -norminette ./ex15/ft_atoi_base.c
 
 compile: norminette
-	-gcc ./ex00/ft_strlen.c test_ex00_ft_strlen.c -Wall -Werror -Wextra -o test_ex00_ft_strlen
-	-gcc ./ex01/ft_putstr.c test_ex01_ft_putstr.c -Wall -Werror -Wextra -o test_ex01_ft_putstr
-	-gcc ./ex02/ft_putnbr.c test_ex02_ft_putnbr.c -Wall -Werror -Wextra -o test_ex02_ft_putnbr
-	-gcc ./ex03/ft_atoi.c test_ex03_ft_atoi.c -Wall -Werror -Wextra -o test_ex03_ft_atoi
-	-gcc ./ex04/ft_putnbr_base.c test_ex04_ft_putnbr_base.c -Wall -Werror -Wextra -o test_ex04_ft_putnbr_base
-	-gcc ./ex05/ft_atoi_base.c ./ex05/ft_strlen.c test_ex05_ft_atoi_base.c -Wall -Werror -Wextra -o test_ex05_ft_atoi_base
+	-gcc ./ex00/ft_create_elem.c test_ex00_ft_create_elem.c -Wall -Werror -Wextra -o test_ex00_ft_create_elem
+# -gcc ./ex01/ft_putstr.c test_ex01_ft_putstr.c -Wall -Werror -Wextra -o test_ex01_ft_putstr
+# -gcc ./ex02/ft_putnbr.c test_ex02_ft_putnbr.c -Wall -Werror -Wextra -o test_ex02_ft_putnbr
+# -gcc ./ex03/ft_atoi.c test_ex03_ft_atoi.c -Wall -Werror -Wextra -o test_ex03_ft_atoi
+# -gcc ./ex04/ft_putnbr_base.c test_ex04_ft_putnbr_base.c -Wall -Werror -Wextra -o test_ex04_ft_putnbr_base
+# -gcc ./ex05/ft_atoi_base.c ./ex05/ft_strlen.c test_ex05_ft_atoi_base.c -Wall -Werror -Wextra -o test_ex05_ft_atoi_base
 
-build-sample: compile
-	-./test_ex00_ft_strlen > result_sample_ex00_ft_strlen.txt
-	-./test_ex01_ft_putstr > result_sample_ex01_ft_putstr.txt
-	-./test_ex02_ft_putnbr > result_sample_ex02_ft_putnbr.txt
-	-./test_ex03_ft_atoi > result_sample_ex03_ft_atoi.txt
-	-./test_ex04_ft_putnbr_base > result_sample_ex04_ft_putnbr_base.txt
-	-./test_ex05_ft_atoi_base > result_sample_ex05_ft_atoi_base.txt
+# build-sample: compile
+# 	-./test_ex00_ft_strlen > result_sample_ex00_ft_strlen.txt
+# 	-./test_ex01_ft_putstr > result_sample_ex01_ft_putstr.txt
+# 	-./test_ex02_ft_putnbr > result_sample_ex02_ft_putnbr.txt
+# 	-./test_ex03_ft_atoi > result_sample_ex03_ft_atoi.txt
+# 	-./test_ex04_ft_putnbr_base > result_sample_ex04_ft_putnbr_base.txt
+# 	-./test_ex05_ft_atoi_base > result_sample_ex05_ft_atoi_base.txt
 
 run:	compile
 	-./test_ex00_ft_strlen > result_current_ex00_ft_strlen.txt
-	-./test_ex01_ft_putstr > result_current_ex01_ft_putstr.txt
-	-./test_ex02_ft_putnbr > result_current_ex02_ft_putnbr.txt
-	-./test_ex03_ft_atoi > result_current_ex03_ft_atoi.txt
-	-./test_ex04_ft_putnbr_base > result_current_ex04_ft_putnbr_base.txt
-	-./test_ex05_ft_atoi_base > result_current_ex05_ft_atoi_base.txt
+# 	-./test_ex01_ft_putstr > result_current_ex01_ft_putstr.txt
+# 	-./test_ex02_ft_putnbr > result_current_ex02_ft_putnbr.txt
+# 	-./test_ex03_ft_atoi > result_current_ex03_ft_atoi.txt
+# 	-./test_ex04_ft_putnbr_base > result_current_ex04_ft_putnbr_base.txt
+# 	-./test_ex05_ft_atoi_base > result_current_ex05_ft_atoi_base.txt
 
 all:	norminette	compile run
 
@@ -68,3 +68,5 @@ clean-before-push-with-sample: clean
 	-git add .
 	-git commit -m "Build Sample Complete"
 	-git push origin master
+
+.PHONY: clean all norminette compile run
