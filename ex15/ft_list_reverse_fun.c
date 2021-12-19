@@ -16,7 +16,6 @@
 void	ft_list_reverse_fun(t_list *begin_list)
 {
 	t_list	*next;
-	t_list	*previous;
 	t_list	*current;
 	void	*previous_value;
 

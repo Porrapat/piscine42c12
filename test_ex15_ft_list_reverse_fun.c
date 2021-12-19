@@ -19,7 +19,6 @@ int		main(void)
 {
 	int		index;
 	int		*malloced_index;
-	//int		*data;
 	t_list	*list;
 	t_list	*current;
 
