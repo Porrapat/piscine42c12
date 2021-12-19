@@ -1,50 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_reverse_fun.c                              :+:      :+:    :+:   */
+/*   ft_list_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/22 16:45:58 by ecaceres          #+#    #+#             */
-/*   Updated: 2019/08/22 16:45:58 by ecaceres         ###   ########.fr       */
+/*   Created: 2019/08/22 18:51:12 by ecaceres          #+#    #+#             */
+/*   Updated: 2019/08/22 18:51:13 by ecaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-#include "ft_list.h"
-
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
-void	ft_list_reverse_fun(t_list *begin_list)
+#include "ex14/ft_list.h"
+
+void	ft_swap_void(void **a, void **b)
 {
-	t_list	*next;
-	t_list	*previous;
-	t_list	*current;
-	void	*previous_value;
+	void *c;
 
-	if (begin_list == 0)
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+
+void	ft_list_sort(t_list **begin_list, int (*cmp)())
+{
+	t_list	*current;
+	t_list	*end;
+	bool	swapped;
+
+	if (*begin_list == 0)
 		return ;
-	previous_value = 0;
-	current = begin_list;
-	while (current != NULL)
+	swapped = true;
+	end = 0;
+	while (swapped)
 	{
-		next = current->next;
-		if (next != 0)
-			break ;
-		previous_value = next->data;
-		current->data = previous_value;
-		printf("%p  previous = %d\n", previous_value, previous_value == 0 ? -1 : *((int *)previous_value));
-		current = next;
+		swapped = false;
+		current = *begin_list;
+		while (current->next != end)
+		{
+			if ((*cmp)(current->data, current->next->data) > 0)
+			{
+				ft_swap_void(&(current->data), &(current->next->data));
+				swapped = true;
+			}
+			current = current->next;
+		}
+		end = current;
 	}
-	begin_list->data = previous_value;
+}
+
+int		less_than(void *a, void *b)
+{
+	return ((*(int *)a) > (*(int *)b));
 }
 
 int		main(void)
 {
 	int		index;
 	int		*malloced_index;
-	//int		*data;
 	t_list	*list;
 	t_list	*current;
 
@@ -53,19 +69,17 @@ int		main(void)
 	while (index < 10)
 	{
 		malloced_index = malloc(sizeof(int));
-		*malloced_index = index;
+		*malloced_index = 9 - index;
 		ft_list_push_back(&list, (void *)malloced_index);
-		printf("%p list[%d] = %d\n", malloced_index, index, *malloced_index);
+		printf("list[%d] = %d\n", index, *malloced_index);
 		index++;
 	}
 	index = 1;
-	ft_list_reverse_fun(list->next);
-	printf("Reversed\n");
+	ft_list_sort(&(list->next), &less_than);
+	printf("Sorted\n");
 	current = list->next;
 	while (index < 10)
 	{
-		//data = (int *)current->data;
-		//printf("list[%d] = %d\n", index, data != 0 ? *data : -1);
 		printf("list[%d] = %d\n", index, *((int *)current->data));
 		index++;
 		current = current->next;

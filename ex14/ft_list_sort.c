@@ -17,7 +17,7 @@
 
 void	ft_swap_void(void **a, void **b)
 {
-	void *c;
+	void	*c;
 
 	c = *a;
 	*a = *b;

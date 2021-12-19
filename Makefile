@@ -9,13 +9,13 @@ norminette:
 	-norminette ./ex06/ft_list_clear.c ./ex06/ft_list.h
 	-norminette ./ex07/ft_list_at.c ./ex07/ft_list.h
 	-norminette ./ex08/ft_list_reverse.c ./ex08/ft_list.h
-# -norminette ./ex09/ft_atoi_base.c
-# -norminette ./ex10/ft_atoi_base.c
-# -norminette ./ex11/ft_atoi_base.c
-# -norminette ./ex12/ft_atoi_base.c
-# -norminette ./ex13/ft_atoi_base.c
-# -norminette ./ex14/ft_atoi_base.c
-# -norminette ./ex15/ft_atoi_base.c
+	-norminette ./ex09/ft_list_foreach.c ./ex09/ft_list.h
+	-norminette ./ex10/ft_list_foreach_if.c ./ex10/ft_list.h
+	-norminette ./ex11/ft_list_find.c ./ex11/ft_list.h
+	-norminette ./ex12/ft_list_remove_if.c ./ex12/ft_list.h
+	-norminette ./ex13/ft_list_merge.c ./ex13/ft_list.h
+	-norminette ./ex14/ft_list_sort.c ./ex14/ft_list.h
+	-norminette ./ex15/ft_list_reverse_fun.c ./ex15/ft_list.h
 
 compile: norminette
 	-gcc ./ex00/ft_create_elem.c test_ex00_ft_create_elem.c -Wall -Werror -Wextra -o test_ex00_ft_create_elem
@@ -44,6 +44,44 @@ compile: norminette
 	./ex03/ft_list_last.c \
 	./ex04/ft_list_push_back.c \
 	test_ex05_ft_list_push_strs.c -Wall -Werror -Wextra -o test_ex05_ft_list_push_strs
+	-gcc ./ex06/ft_list_clear.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	./ex03/ft_list_last.c \
+	./ex04/ft_list_push_back.c \
+	./ex05/ft_list_push_strs.c \
+	test_ex06_ft_list_clear.c -Wall -Werror -Wextra -o test_ex06_ft_list_clear
+	-gcc ./ex07/ft_list_at.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	./ex03/ft_list_last.c \
+	./ex04/ft_list_push_back.c \
+	./ex05/ft_list_push_strs.c \
+	./ex06/ft_list_clear.c \
+	test_ex07_ft_list_at.c -Wall -Werror -Wextra -o test_ex07_ft_list_at
+	-gcc ./ex08/ft_list_reverse.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	./ex03/ft_list_last.c \
+	./ex04/ft_list_push_back.c \
+	./ex05/ft_list_push_strs.c \
+	./ex06/ft_list_clear.c \
+	./ex07/ft_list_at.c \
+	test_ex08_ft_list_reverse.c -Wall -Werror -Wextra -o test_ex08_ft_list_reverse
+	-gcc ./ex09/ft_list_foreach.c \
+	./ex00/ft_create_elem.c \
+	./ex01/ft_list_push_front.c \
+	./ex02/ft_list_size.c \
+	./ex03/ft_list_last.c \
+	./ex04/ft_list_push_back.c \
+	./ex05/ft_list_push_strs.c \
+	./ex06/ft_list_clear.c \
+	./ex07/ft_list_at.c \
+	./ex08/ft_list_reverse.c \
+	test_ex09_ft_list_foreach.c -Wall -Werror -Wextra -o test_ex09_ft_list_foreach
 
 # -gcc ./ex03/ft_atoi.c test_ex03_ft_atoi.c -Wall -Werror -Wextra -o test_ex03_ft_atoi
 # -gcc ./ex04/ft_putnbr_base.c test_ex04_ft_putnbr_base.c -Wall -Werror -Wextra -o test_ex04_ft_putnbr_base
@@ -83,9 +121,12 @@ clean:
 	-rm test_ex01_ft_list_push_front
 	-rm test_ex02_ft_list_size
 	-rm test_ex03_ft_list_last
-# 	-rm test_ex03_ft_atoi
-# 	-rm test_ex04_ft_putnbr_base
-# 	-rm test_ex05_ft_atoi_base
+	-rm test_ex04_ft_list_push_back
+	-rm test_ex05_ft_list_push_strs
+	-rm test_ex06_ft_list_clear
+	-rm test_ex07_ft_list_at
+	-rm test_ex08_ft_list_reverse
+
 
 clean-sample:
 	-rm -rf result_sample_ex*.txt
