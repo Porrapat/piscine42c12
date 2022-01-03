@@ -26,7 +26,7 @@ int	main(void)
 	while (index < 10)
 	{
 		malloced_index = malloc(sizeof(int));
-		*malloced_index = index;
+		*malloced_index = index * 100;
 		ft_list_push_back(&list, (void *)malloced_index);
 		index++;
 	}
