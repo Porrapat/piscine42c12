@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "ex01/ft_list.h"
 
-int		main(void)
+int	main(void)
 {
 	int		data;
 	int		data2;

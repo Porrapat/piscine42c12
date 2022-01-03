@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "ex03/ft_list.h"
 
-int		main(void)
+int	main(void)
 {
 	int		data;
 	int		data2;
@@ -32,7 +32,6 @@ int		main(void)
 	printf("list->x->data: %d\n", *((int *)(base_list->next->data)));
 	size = ft_list_size(base_list);
 	printf("size is %d\n", size);
-
 	last_list = ft_list_last(base_list);
 	printf("last_list->next: %p\n", last_list->next);
 	printf("last_list->data: %d\n", *((int *)(last_list->data)));

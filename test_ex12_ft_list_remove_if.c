@@ -21,12 +21,12 @@ void	delete_element(void *element)
 	free(element);
 }
 
-int		compare_modulo(void *data, void *data_ref)
+int	compare_modulo(void *data, void *data_ref)
 {
 	return (*((int *)data) % *((int *)data_ref));
 }
 
-int		main(void)
+int	main(void)
 {
 	int		*index;
 	int		*modulo;

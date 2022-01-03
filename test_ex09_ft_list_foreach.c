@@ -19,7 +19,7 @@ void	print_element(void *element)
 	printf("element:: %d\n", *((int *)element));
 }
 
-int		main(void)
+int	main(void)
 {
 	int		*index;
 	int		*malloced_index;

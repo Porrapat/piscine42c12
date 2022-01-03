@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "ex00/ft_list.h"
 
-int		main(void)
+int	main(void)
 {
 	int		data;
 	t_list	*list;

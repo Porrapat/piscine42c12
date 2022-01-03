@@ -18,12 +18,12 @@
 
 void	ft_swap_void(void **a, void **b);
 
-int		less_than(void *a, void *b)
+int	less_than(void *a, void *b)
 {
 	return ((*(int *)a) > (*(int *)b));
 }
 
-int		main(void)
+int	main(void)
 {
 	int		index;
 	int		*malloced_index;

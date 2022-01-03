@@ -21,7 +21,7 @@ void	print_element(void *element)
 	free(element);
 }
 
-int		main(void)
+int	main(void)
 {
 	int		*index;
 	int		*malloced_index;

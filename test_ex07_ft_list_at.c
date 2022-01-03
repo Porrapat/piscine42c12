@@ -15,7 +15,7 @@
 
 #include "ex07/ft_list.h"
 
-int		main(void)
+int	main(void)
 {
 	int		index;
 	int		*malloced_index;

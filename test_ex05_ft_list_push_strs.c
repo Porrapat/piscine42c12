@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "ex05/ft_list.h"
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int		index;
 	t_list	*current;
