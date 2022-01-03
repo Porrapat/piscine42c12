@@ -15,7 +15,7 @@
 
 t_list	*ft_list_last(t_list *begin_list)
 {
-	if(begin_list == NULL)
+	if (begin_list == NULL)
 		return (NULL);
 	if (begin_list->next == 0)
 		return (begin_list);
